@@ -27,9 +27,9 @@
   --light-gray: hsl(0, 0%, 80%);
   --platinum: hsl(0, 4%, 91%);
   --xiketic: hsl(275, 24%, 10%);
-  --orange: hsl(31, 100%, 51%);
+  --orange: hsla(42.4, 100%, 53.1%);
   --white: hsl(0, 0%, 100%);
-  --onyx: hsl(240, 5%, 26%);
+  --onyx: hsl(0, 0%, 85%);
 
   /**
    * typography
@@ -265,10 +265,12 @@ body.active { overflow-y: hidden; }
   left: 0;
   width: 100%;
   background: var(--raisin-black-1);
-  box-shadow: 0 3px 27px hsla(0, 0%, 0%, 0.5);
+  box-shadow: 0 3px 27px hsla(42.4, 100%, 53.1%);
   padding-block: 20px;
   z-index: 4;
 }
+
+
 
 .header .container {
   display: flex;
@@ -280,7 +282,7 @@ body.active { overflow-y: hidden; }
 
 .nav-open-btn {
   color: var(--white);
-  font-size: 40px;
+  font-size: 50px;
   padding: 5px;
 }
 
@@ -331,13 +333,21 @@ body.active { overflow-y: hidden; }
 .navbar-link {
   color: var(--white);
   font-size: 15px;
-  padding: 10px 25px;
+  padding: 11px 65px;
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
   font-weight: var(--fw-500);
   transition: 0.15s ease-in-out;
+  word-spacing: 3px;
+  
+ 
 }
 
 .navbar-link:is(:hover, :focus) { color: var(--orange); }
+
+.d2elogo {
+  display: flex;
+  size: 10%;
+}
 
 .nav-social-list {
   display: flex;
@@ -373,10 +383,12 @@ body.active { overflow-y: hidden; }
   #HERO
 \*-----------------------------------*/
 
+
+
 .hero {
-  background: url("../images/hero-banner.jpg") no-repeat;
-  background-size: cover;
-  background-position: top center;
+  background:  url("../images/Wallpaper\ \(1\).png");
+  background-size: fill;
+  background-position:  center;
   margin-top: 90px;
   padding: var(--section-padding) 0;
   height: 100vh;
@@ -385,6 +397,7 @@ body.active { overflow-y: hidden; }
   justify-content: center;
   align-items: center;
   text-align: center;
+  
 }
 
 .hero-subtitle {
@@ -405,6 +418,7 @@ body.active { overflow-y: hidden; }
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  background-color: rgb(49, 48, 48);
 }
 
 .hero .btn-primary ion-icon { font-size: 25px; }
@@ -432,25 +446,35 @@ body.active { overflow-y: hidden; }
 
 .about-banner { margin-bottom: 40px; }
 
-.about-img { width: 100%; }
+.about-cards {
+  size: 50%;
+  display: grid;
+  justify-content: center;
+}
+
+.about-img { width: 125%; 
+
+}
 
 .character { display: none; }
 
 .about-content {
-  background: var(--raisin-black-1);
+  background: hsl(234deg 14% 14% / 59%);
   color: var(--white);
-  padding: 40px 20px;
+  padding: 1px 3px;
   border-radius: 4px;
   box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.2);
+  
 }
 
 .about-subtitle {
   color: var(--orange);
   font-family: var(--ff-oswald);
-  font-size: var(--fs-8);
+  font-size: var(--fs-3);
   font-weight: var(--fw-500);
   text-transform: uppercase;
   margin-bottom: 15px;
+  
 }
 
 .about-title {
@@ -465,13 +489,12 @@ body.active { overflow-y: hidden; }
 
 .about-text,
 .about-bottom-text {
-  color: var(--light-gray);
-  font-size: var(--fs-9);
-  line-height: 1.8;
+  color: var(--white);
+  font-size: 14px;
   letter-spacing: 0.5px;
 }
 
-.about-text { margin-bottom: 20px; }
+.about-text { margin-bottom: 15px; }
 
 .about-bottom-text {
   display: flex;
@@ -588,7 +611,8 @@ body.active { overflow-y: hidden; }
   #GALLERY
 \*-----------------------------------*/
 
-.gallery { padding: var(--section-padding) 0; }
+.gallery { padding: var(--section-padding) 0;
+ }
 
 .gallery-list {
   display: flex;
@@ -662,7 +686,14 @@ body.active { overflow-y: hidden; }
 
 .team .btn-primary { margin-inline: auto; }
 
-
+.streamer-names {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  font-family: var(--ff-oswald);
+  color: white;
+  
+}
 
 
 
@@ -692,7 +723,7 @@ body.active { overflow-y: hidden; }
 .gears .card-banner a { width: 100%; }
 
 .gears .card-banner img {
-  width: 45%;
+  width: 100%;
   margin-inline: auto;
 }
 
@@ -1268,7 +1299,15 @@ body.active { overflow-y: hidden; }
 
   .gears-list { grid-template-columns: 1fr 1fr; }
 
+form .button {
+  padding: 5 px;
+  background: hsla(42.4, 100%, 53.1%);;
+  outline: none;
+  color: rgb(3, 2, 2);
+  border: 0;
+  cursor: pointer;
 
+}
 
   /**
    * NEWSLETTER
@@ -1420,13 +1459,15 @@ body.active { overflow-y: hidden; }
 
   .navbar-link {
     position: relative;
-    color: var(--platinum);
-    padding-block: 34px;
+    color: var(--white);
+    padding-block: 30px;
     border: none;
     font-family: var(--ff-oswald);
     text-transform: uppercase;
     letter-spacing: 1px;
     z-index: 1;
+  
+    
   }
 
   .navbar-link::after {
@@ -1750,7 +1791,8 @@ body.active { overflow-y: hidden; }
    * NEWSLETTER
    */
 
-  .newsletter-card { padding-block: 60px; }
+  .newsletter-card { padding-block: 60px;
+   }
 
   .newsletter-content { max-width: 500px; }
 
